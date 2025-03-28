@@ -1,0 +1,4 @@
+
+
+# 1 aggiustare "today" non puoi prendere index = 0 perchè possono mettere anche altre date
+# 2 blocca input ocation e START buton quando è in fase di ricerca posizione
