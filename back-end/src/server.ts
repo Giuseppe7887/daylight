@@ -7,7 +7,7 @@ import { config } from "dotenv";
 import cors from "cors";
 
 
-config({path: "../.env"});
+config();
 
 const app: Express = express();
 
