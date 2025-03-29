@@ -25,6 +25,7 @@ const isCurrentYear = day.split("-")[0] == new Date().getFullYear().toString();
             <p>sunrise</p>
 
             <div class="flex">
+
                 <img class="size-5 mr-2" src="../assets/sunrise.svg" alt="sunrise">
                 <p class="font-bold">{{ toLocalTime(sunrise) }}</p>
             </div>
