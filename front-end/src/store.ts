@@ -9,7 +9,6 @@ import axios from "axios";
 // @ts-ignore
 const API_URL = `${import.meta.env.VITE_API_SERVER}/${import.meta.env.VITE_API_DAYLIGHT_ENDPOINT}`;
 
-
 const store = {
   state(): AppState {
     return {

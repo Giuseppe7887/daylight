@@ -6,7 +6,7 @@
     "build": "npx tsc",
     "dev": "npx tsc --watch | nodemon out/test.js",
     "start": "node out/main.js",
-    "deploy": "npx tsc && gcloud functions deploy daylight   --runtime nodejs22   --trigger-http   --allow-unauthenticated"
+    "deploy": "gcloud functions deploy daylight   --runtime nodejs22   --trigger-http   --allow-unauthenticated"
   },
   "keywords": [],
   "author": "",
