@@ -9,6 +9,7 @@
 ```bash
 npm install
 gcloud init
+gcloud services enable run.googleapis.com
 ```
 
 ## DEV 

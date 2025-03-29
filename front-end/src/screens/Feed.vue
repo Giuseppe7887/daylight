@@ -20,7 +20,7 @@ onMounted(async () => {
 
 <template>
     <div v-if="state.daylightData.length"
-        class="w-11/12  md:grid md:grid-cols-2 md:gap-1 lg:gap.2 lg:grid-cols-3 flex flex-col items-center justify-center">
+        class="w-11/12  md:grid md:grid-cols-2 md:gap-1 lg:gap.2 lg:grid-cols-3 xl:grid-cols-4 flex flex-col items-center justify-center">
 
         <template v-for="(data, index) in state.daylightData">
             <DaylightCard :data :index />

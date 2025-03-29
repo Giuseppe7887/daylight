@@ -52,7 +52,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="w-10/12 md:w-3/6  flex items-center justify-center flex-col ">
+    <div class="w-10/12  md:w-5/6 lg:w-3/6 flex items-center justify-center flex-col ">
 
         <FormField label="Date">
             <Input placeholder="Date" :value="state.currentDay!" type="date"

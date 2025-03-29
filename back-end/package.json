@@ -1,12 +1,12 @@
 {
   "name": "back-end",
   "version": "1.0.0",
-  "main": "out/server.js",
+  "main": "out/main.js",
   "scripts": {
-    "build": "npx tsc",       
-    "dev":"npx tsc --watch | nodemon out/server.js",
-    "start": "node out/server.js",  
-    "deploy": "gcloud app deploy" 
+    "build": "npx tsc",
+    "dev": "npx tsc --watch | nodemon out/test.js",
+    "start": "node out/main.js",
+    "deploy": "npx tsc && gcloud functions deploy daylight   --runtime nodejs22   --trigger-http   --allow-unauthenticated"
   },
   "keywords": [],
   "author": "",

@@ -17,7 +17,7 @@ const position = computed(() => {
 </script>
 
 <template>
-  <div class="h-20 w-full flex items-center justify-between">
+  <div class="min-h-20 w-full flex items-center justify-between">
     <div class="flex flex-col items-start justify-center">
       <h1 class="ml-3 text-2xl font-bold mr-5 md:text-3xl">DAYLIGHT</h1>
       <div v-if="route.path != '/form'" class="ml-3">

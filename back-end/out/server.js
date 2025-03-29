@@ -20,6 +20,12 @@ const cors_1 = __importDefault(require("cors"));
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
+app.get("/", (req, res) => {
+    res.status(200).json({
+        status: "success",
+        message: "Welcome to the Daylight API"
+    });
+});
 app.get("/api/:date", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const locaion = req.query;
@@ -33,9 +39,4 @@ app.get("/api/:date", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.json({ status: "error", message: err });
     }
 }));
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, (err) => {
-    if (err)
-        return console.error(err);
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+exports.default = app;
