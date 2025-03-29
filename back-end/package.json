@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "out/server.js",
   "scripts": {
-    "build": "tsc",       
+    "build": "npx tsc",       
+    "dev":"npx tsc --watch | nodemon out/server.js",
     "start": "node out/server.js",  
-    "deploy": "gcloud app deploy"  
+    "deploy": "gcloud app deploy" 
   },
   "keywords": [],
   "author": "",

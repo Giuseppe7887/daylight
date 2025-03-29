@@ -17,7 +17,7 @@ const utils_1 = require("./utils");
 const dotenv_1 = require("dotenv");
 //@ts-ignore
 const cors_1 = __importDefault(require("cors"));
-(0, dotenv_1.config)({ path: "../.env" });
+(0, dotenv_1.config)();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.get("/api/:date", (req, res) => __awaiter(void 0, void 0, void 0, function* () {

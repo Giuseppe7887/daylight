@@ -28,7 +28,6 @@ app.get("/api/:date", async (req: Request, res: Response) => {
   }catch(err){
     res.json({ status: "error", message:err });
   }
-
 });
 
 
