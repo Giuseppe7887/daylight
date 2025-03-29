@@ -11,10 +11,8 @@ const store = useStore();
 
 const state: ComputedRef<AppState> = computed(() => store.state);
 
-// const {location,sunlightData, currentDay } = state.value;
 
 onMounted(async () => {
-    console.log('fetching data');
     await store.dispatch('fetchDaylightData');
 });
 </script>

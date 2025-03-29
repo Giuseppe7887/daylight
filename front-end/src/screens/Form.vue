@@ -12,7 +12,7 @@ import Spinner from '../components/Spinner.vue';
 
 const store = useStore();
 const router = useRouter();
-const positionHint = ref("Get the position")
+const searchingLocation = ref(false);
 
 const state: ComputedRef<AppState> = computed(() => store.state);
 
@@ -22,11 +22,11 @@ function changeCallback(action: string, event: Event) {
 }
 
 function getPosition() {
-    positionHint.value = "getting position..."
+    searchingLocation.value = true
     navigator.geolocation.getCurrentPosition((position) => {
         store.commit('setLatitude', position.coords.latitude);
         store.commit('setLongitude', position.coords.longitude);
-        positionHint.value = "Get the position"
+        searchingLocation.value = false
     });
 }
 
@@ -35,6 +35,8 @@ const okForm = computed(() => {
 });
 
 function confirm() {
+    if(searchingLocation.value) return searchingLocation.value =  !window.confirm("Ricerca della posizione in corso, vuoi annullarla?")
+ 
     if (okForm.value) {
         store.commit("resetdDaylightData")
         router.push('/');
@@ -43,7 +45,7 @@ function confirm() {
     }
 }
 
-onMounted(()=>{
+onMounted(() => {
     store.commit("resetdDaylightData")
 })
 
@@ -65,11 +67,11 @@ onMounted(()=>{
 
 
         <FormField label="Location">
-            <Input placeholder="latitude" :value="state.location?.latitude!" type="number"
+            <Input :disabled="searchingLocation" placeholder="latitude" :value="state.location?.latitude!" type="number"
                 :action="(event) => changeCallback('setLatitude', event)" />
 
             <br />
-            <Input placeholder="longitude" :value="state.location?.longitude!" type="number"
+            <Input :disabled="searchingLocation"  placeholder="longitude" :value="state.location?.longitude!" type="number"
                 :action="(event) => changeCallback('setLongitude', event)" />
 
         </FormField>
@@ -77,9 +79,9 @@ onMounted(()=>{
 
         <div class="flex items-center justify-center">
             <p @click="getPosition" class="mr-2 text-blue-400 hover:text-blue-200 hover:cursor-pointer">
-                {{ positionHint }}
+                {{ searchingLocation ? "getting position..." : "Get the position" }}
             </p>
-            <Spinner v-if="positionHint == 'getting position...'" size="15"  />
+            <Spinner v-if="searchingLocation" size="15" />
         </div>
 
 

@@ -1,9 +1,6 @@
-export const API_SERVER = "daylight-455111.lm.r.appspot.com";
-export const API_PATH = "/api";
+import type { VitePWAOptions } from "vite-plugin-pwa";
 
-export const API_URL = `https://${API_SERVER}${API_PATH}`;
-
-export const pwaConfig = {
+const pwaConfig:Partial<VitePWAOptions> = {
   registerType: "autoUpdate",
   manifest: {
     name: "DAYLIGHT",
@@ -26,3 +23,6 @@ export const pwaConfig = {
     ],
   },
 };
+
+
+export default pwaConfig;

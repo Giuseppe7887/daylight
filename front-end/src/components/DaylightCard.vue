@@ -8,12 +8,14 @@ let { sunrise, sunset,dayLightMinutes,day }:DaylightData = props.data;
 
 const splittedTime = splitTimeFromMniutes(dayLightMinutes);
 
+const isCurrentYear = day.split("-")[0] == new Date().getFullYear().toString();
+
 </script>
 
 <template>
     <div class="mb-2 w-full h-50 shadow-md grid grid-cols-2 gird-rows-3 rounded-md">
         <div class="flex flex-col items-center justify-center col-span-2">
-            <p class="font-bold text-lg">{{index == 0 ? "Today" : toLocalDate(day) }} </p>        
+            <p class="font-bold text-lg">{{(isCurrentYear && index == 0) ? "Today" : toLocalDate(day) }} </p>        
             <p class="font-medium">{{ splittedTime.hours }} hours and {{ splittedTime.minutes }} minutes of daylight</p>        
         </div>       
 

@@ -4,7 +4,11 @@ import type { AppState, LatLng, Option, DaylightData } from "./types";
 // @ts-ignore
 import {DateTime} from 'luxon';
 import axios from "axios";
-import { API_URL } from "./constants";
+
+
+// @ts-ignore
+const API_URL = `${import.meta.env.VITE_API_SERVER}/${import.meta.env.VITE_API_DAYLIGHT_ENDPOINT}`;
+
 
 const store = {
   state(): AppState {
