@@ -10,7 +10,7 @@ export type Option<T> = T | null;
 
 export interface AppState{
     location:Option<LatLng>;
-    currentDay:Option<DateTime>;
+    currentDay:Option<string>;
     daylightData:DaylightData[]        
 }
 
