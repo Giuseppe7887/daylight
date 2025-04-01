@@ -8,8 +8,8 @@
 ## SETUP
 ```bash
 npm install
-gcloud init
-gcloud services enable run.googleapis.com
+gcloud config set project [NOME-PROGETTO]
+gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com
 ```
 
 ## DEV 

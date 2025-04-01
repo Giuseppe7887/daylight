@@ -7,6 +7,5 @@ exports.daylight = void 0;
 // servers
 const server_1 = __importDefault(require("./server"));
 // functions
-// @ts-ignore
 const daylight = (req, res) => (0, server_1.default)(req, res);
 exports.daylight = daylight;
