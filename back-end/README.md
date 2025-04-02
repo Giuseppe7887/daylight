@@ -9,7 +9,7 @@
 ```bash
 npm install
 gcloud config set project [NOME-PROGETTO]
-gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com run.googleapis.com 
 ```
 
 ## DEV 
