@@ -28,3 +28,6 @@ front-end/.netlify
 
 back-end/.env
 back-end/node_modules
+
+__pycache__/
+venv
